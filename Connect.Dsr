@@ -197,7 +197,7 @@ Private Sub mSelectedControls_ItemRemoved(ByVal VBControl As VBIDE.VBControl)
 End Sub
 
 Private Sub mIDE_BeginCompile(ByVal VBProject As VBIDE.VBProject)
-    LogEvent "IDE begins compiling " & VBProject.Name & " project"
+    LogEvent "IDE begins compiling " & mVBInstance.ActiveVBProject.Name & " project" ' VBProject can be Nothing, better use mVBInstance.ActiveVBProject instead here
 End Sub
 
 Private Sub mIDE_EnterDesignMode()
